@@ -48,3 +48,4 @@
 - Update 47: Implemented feature module component part 47
 - Update 48: Implemented feature module component part 48
 - Update 49: Implemented feature module component part 49
+- Update 50: Implemented feature module component part 50
