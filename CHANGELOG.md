@@ -68,3 +68,4 @@
 - Update 67: Implemented feature module component part 67
 - Update 68: Implemented feature module component part 68
 - Update 69: Implemented feature module component part 69
+- Update 70: Implemented feature module component part 70
