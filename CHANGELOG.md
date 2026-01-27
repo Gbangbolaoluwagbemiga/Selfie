@@ -8,3 +8,4 @@
 - Update 7: Implemented feature module component part 7
 - Update 8: Implemented feature module component part 8
 - Update 9: Implemented feature module component part 9
+- Update 10: Implemented feature module component part 10
