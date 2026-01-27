@@ -44,3 +44,4 @@
 - Update 43: Implemented feature module component part 43
 - Update 44: Implemented feature module component part 44
 - Update 45: Implemented feature module component part 45
+- Update 46: Implemented feature module component part 46
