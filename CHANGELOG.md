@@ -24,3 +24,4 @@
 - Update 23: Implemented feature module component part 23
 - Update 24: Implemented feature module component part 24
 - Update 25: Implemented feature module component part 25
+- Update 26: Implemented feature module component part 26
