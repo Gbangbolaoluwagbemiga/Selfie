@@ -10,3 +10,4 @@
 - Update 9: Implemented feature module component part 9
 - Update 10: Implemented feature module component part 10
 - Update 11: Implemented feature module component part 11
+- Update 12: Implemented feature module component part 12
