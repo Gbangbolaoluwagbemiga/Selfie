@@ -56,3 +56,4 @@
 - Update 55: Implemented feature module component part 55
 - Update 56: Implemented feature module component part 56
 - Update 57: Implemented feature module component part 57
+- Update 58: Implemented feature module component part 58
