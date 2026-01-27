@@ -15,3 +15,4 @@
 - Update 14: Implemented feature module component part 14
 - Update 15: Implemented feature module component part 15
 - Update 16: Implemented feature module component part 16
+- Update 17: Implemented feature module component part 17
