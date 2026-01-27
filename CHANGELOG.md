@@ -12,3 +12,4 @@
 - Update 11: Implemented feature module component part 11
 - Update 12: Implemented feature module component part 12
 - Update 13: Implemented feature module component part 13
+- Update 14: Implemented feature module component part 14
