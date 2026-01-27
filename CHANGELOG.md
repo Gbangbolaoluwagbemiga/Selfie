@@ -5,3 +5,4 @@
 - Update 4: Implemented feature module component part 4
 - Update 5: Implemented feature module component part 5
 - Update 6: Implemented feature module component part 6
+- Update 7: Implemented feature module component part 7
