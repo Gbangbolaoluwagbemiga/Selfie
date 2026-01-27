@@ -35,3 +35,4 @@
 - Update 34: Implemented feature module component part 34
 - Update 35: Implemented feature module component part 35
 - Update 36: Implemented feature module component part 36
+- Update 37: Implemented feature module component part 37
