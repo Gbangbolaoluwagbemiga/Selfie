@@ -28,3 +28,4 @@
 - Update 27: Implemented feature module component part 27
 - Update 28: Implemented feature module component part 28
 - Update 29: Implemented feature module component part 29
+- Update 30: Implemented feature module component part 30
