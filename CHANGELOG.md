@@ -20,3 +20,4 @@
 - Update 19: Implemented feature module component part 19
 - Update 20: Implemented feature module component part 20
 - Update 21: Implemented feature module component part 21
+- Update 22: Implemented feature module component part 22
