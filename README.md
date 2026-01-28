@@ -1,47 +1,54 @@
-# ImpactFlow - Decentralized Crowdfunding Platform
+# ImpactFlow 🌊
 
-## Overview
-ImpactFlow is a hackathon-winning decentralized application (dApp) built with **Next.js** and **Solidity**. It allows users to create fundraising campaigns with transparent, on-chain accountability.
+**ImpactFlow** is a decentralized crowdfunding platform built on **Base Mainnet**. It empowers users to create transparent, milestone-based fundraising campaigns for social causes, creative projects, and community initiatives.
 
-## Tech Stack
-- **Frontend**: Next.js 15, TailwindCSS, RainbowKit, Wagmi, Viem
-- **Smart Contracts**: Solidity 0.8.28, Hardhat, OpenZeppelin
-- **Blockchain**: Compatible with Base, Optimism, Arbitrum, Ethereum
+Built with ❤️ for the **Talent Protocol** Hackathon.
 
-## Features
-- Create Campaigns with target goals and deadlines.
-- Donate ETH to campaigns.
-- Milestone-based funds withdrawal (Creator only).
-- Transparent on-chain history.
+## 🚀 Live Demo & Contract
+- **Contract Address (Base Mainnet):** [`0xC95E2F721B0982D62697c49B298D6e72B7FCcc11`](https://basescan.org/address/0xC95E2F721B0982D62697c49B298D6e72B7FCcc11)
+- **Verified Source Code:** [View on Basescan](https://basescan.org/address/0xC95E2F721B0982D62697c49B298D6e72B7FCcc11#code)
 
-## Getting Started
+## ✨ Key Features
+- **Create Campaigns**: Users can launch fundraising campaigns with specific targets, deadlines, and categories.
+- **Secure Donations**: Donors can contribute ETH directly to smart contracts.
+- **Refund Mechanism**: If a campaign fails to meet its target by the deadline, donors can claim a full refund.
+- **Category Filtering**: Browse campaigns by categories (e.g., Tech, Medical, Education).
+- **Anti-Reentrancy**: Secured with OpenZeppelin's `ReentrancyGuard`.
+- **Modern UI**: Built with Next.js 14, Tailwind CSS, and RainbowKit for seamless wallet connection.
 
-### Smart Contracts
-1. Navigate to `contracts/`:
-   ```bash
-   cd contracts
-   npm install
-   ```
-2. Compile contracts:
-   ```bash
-   npx hardhat compile
-   ```
-3. Run tests:
-   ```bash
-   npx hardhat test
-   ```
+## 🛠️ Tech Stack
+- **Smart Contract**: Solidity, Hardhat, OpenZeppelin
+- **Frontend**: Next.js 14 (App Router), TypeScript, Tailwind CSS
+- **Blockchain Interaction**: Wagmi, Viem, RainbowKit
+- **Network**: Base Mainnet
 
-### Frontend
-1. Navigate to `frontend/`:
-   ```bash
-   cd frontend
-   npm install
-   ```
-2. Run development server:
-   ```bash
-   npm run dev
-   ```
-3. Open [http://localhost:3000](http://localhost:3000)
+## 📦 Installation & Setup
 
-## License
+### Prerequisites
+- Node.js (v18+)
+- npm or yarn
+- Wallet with Base ETH
+
+### 1. Clone the Repo
+```bash
+git clone https://github.com/Gbangbolaoluwagbemiga/Self.git
+cd Self
+```
+
+### 2. Smart Contract (Hardhat)
+```bash
+cd contracts
+npm install
+npx hardhat compile
+npx hardhat test
+```
+
+### 3. Frontend (Next.js)
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+## 📜 License
 MIT
