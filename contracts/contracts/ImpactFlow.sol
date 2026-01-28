@@ -8,6 +8,7 @@ contract ImpactFlow is ReentrancyGuard {
         address owner;
         string title;
         string description;
+        string category;
         uint256 target;
         uint256 deadline;
         uint256 amountCollected;
@@ -18,13 +19,15 @@ contract ImpactFlow is ReentrancyGuard {
     }
 
     mapping(uint256 => Campaign) public campaigns;
+    mapping(uint256 => mapping(address => uint256)) public fundedAmount;
     uint256 public numberOfCampaigns = 0;
 
-    event CampaignCreated(uint256 indexed id, address owner, string title, uint256 target, uint256 deadline);
+    event CampaignCreated(uint256 indexed id, address owner, string title, uint256 target, uint256 deadline, string category);
     event DonationReceived(uint256 indexed id, address donor, uint256 amount);
     event FundsWithdrawn(uint256 indexed id, address owner, uint256 amount);
+    event RefundIssued(uint256 indexed id, address donor, uint256 amount);
 
-    function createCampaign(address _owner, string memory _title, string memory _description, uint256 _target, uint256 _deadline, string memory _image) public returns (uint256) {
+    function createCampaign(address _owner, string memory _title, string memory _description, string memory _category, uint256 _target, uint256 _deadline, string memory _image) public returns (uint256) {
         require(_deadline > block.timestamp, "The deadline should be a date in the future.");
 
         Campaign storage campaign = campaigns[numberOfCampaigns];
@@ -32,13 +35,14 @@ contract ImpactFlow is ReentrancyGuard {
         campaign.owner = _owner;
         campaign.title = _title;
         campaign.description = _description;
+        campaign.category = _category;
         campaign.target = _target;
         campaign.deadline = _deadline;
         campaign.amountCollected = 0;
         campaign.image = _image;
         campaign.claimed = false;
 
-        emit CampaignCreated(numberOfCampaigns, _owner, _title, _target, _deadline);
+        emit CampaignCreated(numberOfCampaigns, _owner, _title, _target, _deadline, _category);
 
         numberOfCampaigns++;
 
@@ -54,6 +58,7 @@ contract ImpactFlow is ReentrancyGuard {
         campaign.donators.push(msg.sender);
         campaign.donations.push(amount);
         campaign.amountCollected += amount;
+        fundedAmount[_id][msg.sender] += amount;
 
         emit DonationReceived(_id, msg.sender, amount);
     }
@@ -69,6 +74,23 @@ contract ImpactFlow is ReentrancyGuard {
         require(sent, "Failed to send Ether");
         
         emit FundsWithdrawn(_id, campaign.owner, campaign.amountCollected);
+    }
+
+    function refund(uint256 _id) public nonReentrant {
+        Campaign storage campaign = campaigns[_id];
+        require(block.timestamp > campaign.deadline, "Campaign not ended yet");
+        require(campaign.amountCollected < campaign.target, "Target reached, cannot refund");
+        
+        uint256 donatedAmount = fundedAmount[_id][msg.sender];
+        require(donatedAmount > 0, "No funds to refund");
+
+        // Reset funded amount before transfer to prevent reentrancy
+        fundedAmount[_id][msg.sender] = 0;
+        
+        (bool sent,) = payable(msg.sender).call{value: donatedAmount}("");
+        require(sent, "Failed to send Ether");
+
+        emit RefundIssued(_id, msg.sender, donatedAmount);
     }
 
     function getDonators(uint256 _id) public view returns (address[] memory, uint256[] memory) {
